@@ -1,5 +1,9 @@
+"""
+schemas.py  (app/models/schemas.py)
+"""
+
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 
 class Message(BaseModel):
@@ -15,6 +19,11 @@ class Recommendation(BaseModel):
     name: str
     url: str
     test_type: str
+    description: Optional[str] = None
+    job_levels: Optional[List[str]] = None
+    duration: Optional[str] = None
+    remote: Optional[str] = None
+    adaptive: Optional[str] = None
 
 
 class ChatResponse(BaseModel):
